@@ -7,31 +7,29 @@ using System.Threading.Tasks;
 
 namespace Day1.Puzzle1
 {
-    public static class Puzzle1
+    public class Puzzle1 : Day1Puzzle
     {
-        public static int Run(string inputPath) 
+        public Puzzle1(int start, string path):base(start, path)
+        {
+
+        }
+        //Fusk! total används inte
+
+        public override int Run() 
         {
             int nbrOfZeroes = 0;
-            int current = 50;
-            var lines = File.ReadLines(inputPath);
+            var lines = File.ReadLines(_inputPath);
             foreach (var line in lines)
             {
-                current = CalculateResult(line, current);
-                if(current == 0)
+                bool isIncreasing = line.StartsWith("R");
+                var total = CalculateTotal(line, isIncreasing, _current);
+                _current = total % 100;
+                if (_current == 0)
                     nbrOfZeroes++;
             }
             return nbrOfZeroes;
         }
 
-        public static int CalculateResult(string line, int current)
-        {
-            bool isIncreasing = line.StartsWith("R");
-            int.TryParse(line.Substring(1), out int number);
-            if (isIncreasing)
-                current += number;
-            else
-                current -= number;
-            return current % 100;
-        }
+        
     }
 }
