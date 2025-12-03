@@ -57,4 +57,31 @@ namespace Tests
 
         }
     }
-}
+    public class TestsDay3
+    {
+        [Fact]
+        public void Puzzle1Test()
+        {
+            var res = Day3.Puzzle1.Day3Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day3\\TestInput.txt",2);
+            Assert.Equal(357, res);
+        }
+        [Fact]
+        public void Puzzle1Run()
+        {
+            var res = Day3.Puzzle1.Day3Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day3\\InputVictor.txt", 2);
+            Assert.Equal(17100, res);
+        }
+        [Fact]
+        public void Puzzle2Test()
+        {
+            var res = Day3.Puzzle1.Day3Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day3\\TestInput.txt", 12);
+            Assert.Equal(3121910778619, res);
+        }
+        [Fact]
+        public void Puzzle2Run()
+        {
+            var res = Day3.Puzzle1.Day3Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day3\\InputVictor.txt", 12);
+            Assert.Equal(17100, res);
+        }
+    }
+    }
