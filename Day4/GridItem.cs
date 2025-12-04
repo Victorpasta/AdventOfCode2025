@@ -25,26 +25,11 @@ namespace Day4
 
         public List<(int x, int y)> GetAdjacentPositions()
         {
-            List<(int,int)> result = new List<(int,int)> ();
-            for (int y = -1; y < 2; y++)
-            {
-                for(int x = -1; x < 2; x++)
-                {
-                    if(IsValidPosition(X + x, Y + y))
-                        result.Add((X + x, Y + y));
-                }
-            }
-            return result;
+            
         }
         private bool IsValidPosition(int x, int y)
         {
-            if (x == X && y == Y)
-                return false;
-            if(x > _boundries.XMax || y > _boundries.YMax)
-                return false;
-            if(x < 0 || y < 0) 
-                return false;
-            return true;
+            
         }
     }
 }
