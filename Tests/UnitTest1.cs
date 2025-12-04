@@ -2,6 +2,7 @@ using Day1.Puzzle1;
 using Day1.Puzzle2;
 using Day2.Puzzle1;
 using Day2.Puzzle2;
+using Day4;
 
 namespace Tests
 {
@@ -12,7 +13,7 @@ namespace Tests
         {
             var puzzle1 = new Day1.Puzzle1.Puzzle1(50, "C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day1\\Puzzle1\\Input.txt");
             var res = puzzle1.Run();
-            
+
         }
         [Fact]
         public void Puzzle2Test()
@@ -62,7 +63,7 @@ namespace Tests
         [Fact]
         public void Puzzle1Test()
         {
-            var res = Day3.Puzzle1.Day3Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day3\\TestInput.txt",2);
+            var res = Day3.Puzzle1.Day3Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day3\\TestInput.txt", 2);
             Assert.Equal(357, res);
         }
         [Fact]
@@ -81,7 +82,35 @@ namespace Tests
         public void Puzzle2Run()
         {
             var res = Day3.Puzzle1.Day3Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day3\\InputVictor.txt", 12);
-            Assert.Equal(17100, res);
+            Assert.Equal(170418192256861, res);
         }
     }
+    public class TestsDay4
+    {
+        [Fact]
+        public void Puzzle1Test()
+        {
+            var res = Day4.Day4Puzzle.RunOnce("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day4\\TestInput.txt");
+            Assert.Equal(13, res);
+        }
+        [Fact]
+        public void Puzzle1Run()
+        {
+            var res = Day4.Day4Puzzle.RunOnce("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day4\\InputVictor.txt");
+            Assert.Equal(1457, res);
+        }
+        [Fact]
+        public void Puzzle2Test()
+        {
+            var res = Day4.Day4Puzzle.RunMultiple("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day4\\TestInput.txt");
+            Assert.Equal(43, res);
+        }
+        [Fact]
+        public void Puzzle2Run()
+        {
+            var res = Day4.Day4Puzzle.RunMultiple("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day4\\InputVictor.txt");
+            Assert.Equal(8310, res);
+        }
+
     }
+}
