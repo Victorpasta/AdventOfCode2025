@@ -24,7 +24,6 @@ namespace Day4.Puzzle1
             int y = 0;
             foreach (String line in lines)
             {
-                
                 var x = 0;
                 List<GridItem> items = [];
                 foreach(Char c in line)

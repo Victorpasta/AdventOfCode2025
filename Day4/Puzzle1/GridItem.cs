@@ -17,10 +17,13 @@ namespace Day4.Puzzle1
             X = x;
             Y = y;
             _boundries = boundries;
+            willBeRemoved = false;
         }
         public bool HasPaper { get; set; }
         public int X { get; }
         public int Y { get; }
+
+        public bool willBeRemoved { get; set; }
 
         public int[][] GetValidAdjacent()
         {
@@ -53,7 +56,7 @@ namespace Day4.Puzzle1
             {
                 return false;
             }
-            if (y == X && x == X)
+            if (y == Y && x == X)
             {
                 return false;
             }

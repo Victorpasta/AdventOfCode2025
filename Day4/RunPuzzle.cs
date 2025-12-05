@@ -13,14 +13,39 @@ namespace Day4
         public RunPuzzle(string path) {
             this.path = path;
         }
-        public int Run()
+        private int Run(Grid grid)
         {
-            Grid grid = GridReader.GetGrid(path);
             var total = grid.getNumberOfPapers();
             return total;
         }
-      
+        public int RunOnce()
+        {
+            Grid grid = GridReader.GetGrid(path);
+            return Run(grid);
+            
+        }
+        public int MultipleRuns()
+        {
+            Grid grid = GridReader.GetGrid(path);
+            var current = Run(grid);
+            var total = 0;
+            while (current > 0)
+            {
+                foreach (var row in grid.GridMatrix)
+                {
+                    foreach (var item in row)
+                    {
+                        if (item.willBeRemoved)
+                        {
+                            item.HasPaper = false;
+                        }
+                    }
+                }
+                total += current;
+                current = Run(grid);
+            }
+            return total;
 
-        
+        }
     }
 }

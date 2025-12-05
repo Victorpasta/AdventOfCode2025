@@ -27,6 +27,7 @@ namespace Day4.Puzzle1
                 {
                     if (CheckIfAccesible(item))
                     {
+                        item.willBeRemoved = true;
                         nbrPapers++;
                     }
                 }
@@ -72,7 +73,7 @@ namespace Day4.Puzzle1
                     }
                     
                 }
-                if (nbrAdjacent > 4)
+                if (nbrAdjacent >= 4)
                 {
                     return false;
                 }
