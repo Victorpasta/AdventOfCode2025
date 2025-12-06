@@ -27,9 +27,9 @@ namespace Day5
         {
             ReadData input1 = new ReadData(Path);
             var idRanges = input1.StoreIdRanges();
-            var freshIds = new FreshIdRangeCheck(idRanges);
+            var freshIds = new MergeIdRange(idRanges);
             freshIds.InsertionSort();
-            long total = freshIds.GetFreshIDs();
+            long total = freshIds.MergeRanges();
             return total;
         }
     }

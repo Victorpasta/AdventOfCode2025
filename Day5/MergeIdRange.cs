@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Day5
 {
-    public class FreshIdRangeCheck
+    public class MergeIdRange
     {
         private long[] FreshIdArray;
         private IdRange[] IdRanges;
-        public FreshIdRangeCheck(IdRange[] idRanges)
+        public MergeIdRange(IdRange[] idRanges)
         {
             IdRanges = idRanges;
             FreshIdArray = [];
@@ -33,14 +33,15 @@ namespace Day5
             }
         }
 
-        public long GetFreshIDs()
+        public long MergeRanges()
         {
             var lowerBound = IdRanges[0].RangeMin;
             var upperBound = IdRanges[0].RangeMax;
-            long count = 0;
+            long total = 0;
 
             for(int i = 1; i < IdRanges.Length; i++)
             {
+
                 
                 if (IdRanges[i].RangeMin <= upperBound + 1)
                 {
@@ -48,7 +49,7 @@ namespace Day5
                 }
                 else
                 {
-                    count += (upperBound - lowerBound + 1);
+                    total += (upperBound - lowerBound + 1);
                     lowerBound = IdRanges[i].RangeMin;
                     upperBound = IdRanges[i].RangeMax;
 
@@ -56,8 +57,8 @@ namespace Day5
                 
 
             }
-            count += (upperBound - lowerBound + 1);
-            return count;
+            total += (upperBound - lowerBound + 1);
+            return total;
            
 
 

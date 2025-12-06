@@ -5,7 +5,7 @@ using Day3.Puzzle1;
 using Day4;
 using Day4.Puzzle1;
 using Day5;
-
+using Day6;
 
 namespace Tests
 {
@@ -67,6 +67,17 @@ namespace Tests
             var puzzle8 = new PuzzleRun("C:\\Users\\Alexander\\Documents\\skola\\Gitrepo\\AdventOfCode2025\\Day5\\input.txt");
             var res = puzzle8.Run2();
         }
-        
+        [Fact]
+        public void Puzzle9Test()
+        {
+            //"C:\\Users\\Alexander\\Documents\\skola\\Gitrepo\\AdventOfCode2025\\Day6\\Test.txt"
+            var puzzle9 = new RunPuzzle2("C:\\Users\\Alexander\\Documents\\skola\\Gitrepo\\AdventOfCode2025\\Day6\\input.txt");
+            var res = puzzle9.Run();
+        }
+        [Fact]
+        public void puzzle10Test()
+        {
+            long res = Day6Puzzle2.Run("C:\\Users\\Alexander\\Documents\\skola\\Gitrepo\\AdventOfCode2025\\Day6\\input.txt");
+        }
     }
 }
