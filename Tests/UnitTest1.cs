@@ -3,6 +3,7 @@ using Day1.Puzzle2;
 using Day2.Puzzle1;
 using Day2.Puzzle2;
 using Day4;
+using System.Diagnostics;
 
 namespace Tests
 {
@@ -108,9 +109,74 @@ namespace Tests
         [Fact]
         public void Puzzle2Run()
         {
-            var res = Day4.Day4Puzzle.RunMultiple("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day4\\InputVictor.txt");
+            var res = Day4.Day4Puzzle.RunMultiple("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day4\\InputSlotte.txt");
             Assert.Equal(8310, res);
         }
+
+    }
+    public class TestsDay5
+    {
+        [Fact]
+        public void Puzzle1Test()
+        {
+            var res = Day5.Day5Puzzle.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\TestInput.txt");
+            Assert.Equal(3, res);
+        }
+        [Fact]
+        public void Puzzle1Run()
+        {
+            var res = Day5.Day5Puzzle.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\InputVictor.txt");
+            Assert.Equal(828, res);
+        }
+        [Fact]
+        public void Puzzle2Test()
+        {
+            var res = Day5.Day5Puzzle.RunPart2("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\TestInput.txt");
+            Assert.Equal(14, res);
+        }
+        [Fact]
+        public void Puzzle2Run()
+        {
+            var s = Stopwatch.StartNew();
+            var res = Day5.Day5Puzzle.RunPart2("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\InputVictor.txt");
+            s.Stop();
+            File.WriteAllText("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\Speed.txt", s.Elapsed.TotalNanoseconds.ToString());
+            Assert.Equal(352681648086146, res);
+        }
+
+
+    }
+    public class TestsDay6
+    {
+        [Fact]
+        public void Puzzle1Test()
+        {
+            var res = Day6.Day6Puzzle.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day6\\TestInput.txt");
+            Assert.Equal(4277556, res);
+        }
+        [Fact]
+        public void Puzzle1Run()
+        {
+            var res = Day6.Day6Puzzle.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day6\\InputVictor.txt");
+            Assert.Equal(828, res);
+        }
+        [Fact]
+        public void Puzzle2Run()
+        {
+            var s = Stopwatch.StartNew();
+            var res = Day6.Day6Puzzle2Alt.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day6\\InputVictor.txt");
+            s.Stop();
+            File.WriteAllText("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\Speed.txt", s.Elapsed.TotalNanoseconds.ToString());
+
+            Assert.Equal(9608327000261, res);
+        }
+        [Fact]
+        public void Puzzle2Test()
+        {
+            var res = Day6.Day6Puzzle2Alt.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day6\\TestInput.txt");
+            Assert.Equal(3263827, res);
+        }
+
 
     }
 }
