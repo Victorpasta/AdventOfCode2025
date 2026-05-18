@@ -179,4 +179,105 @@ namespace Tests
 
 
     }
+    public class TestsDay7
+    {
+        [Fact]
+        public void Puzzle1Test()
+        {
+            var res = Day7.Day7Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day7\\TestInput.txt");
+            Assert.Equal(21, res);
+        }
+        [Fact]
+        public void Puzzle1Run()
+        {
+            var res = Day7.Day7Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day7\\InputVictor.txt");
+            Assert.Equal(4277556, res);
+        }
+        [Fact]
+        public void Puzzle2Run()
+        {
+            var res = Day7.Day7Puzzle2.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day7\\InputVictor.txt") + 2;
+            Assert.Equal(40, res);
+        }
+        [Fact]
+        public void Puzzle2Test()
+        {
+            var res = Day7.Day7Puzzle2.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day7\\TestInput.txt") + 2;
+            Assert.Equal(40, res);
+        }
+    }
+    public class TestsDay8
+    {
+        [Fact]
+        public void Puzzle1Test()
+        {
+            var res = Day8.Day8Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day8\\TestInput.txt", 10);
+            Assert.Equal(40, res);
+        }
+        [Fact]
+        public void Puzzle1Run()
+        {
+            var s = Stopwatch.StartNew();
+            var res = Day8.Day8Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day8\\InputVictor.txt", 1000);
+            s.Stop();
+            File.WriteAllText("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\Speed.txt", s.Elapsed.TotalNanoseconds.ToString());
+
+            Assert.Equal(69192, res);
+        }
+        [Fact]
+        public void Puzzle2Run()
+        {
+            var res = Day8.Day8Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day8\\InputVictor.txt", 10, false);
+            Assert.Equal(7264308110, res);
+        }
+        [Fact]
+        public void Puzzle2Test()
+        {
+            var res = Day8.Day8Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day8\\TestInput.txt", 10, false);
+            Assert.Equal(25272, res);
+        }
+    }
+    public class TestsDay9
+    {
+        [Fact]
+        public void Puzzle1Test()
+        {
+            var s = Stopwatch.StartNew();
+            var res = Day9.Day9Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day9\\TestInput.txt");
+            s.Stop();
+            File.WriteAllText("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\Speed.txt", s.Elapsed.TotalNanoseconds.ToString());
+
+            Assert.Equal(50, res);
+        }
+        [Fact]
+        public void Puzzle1Run()
+        {
+            var s = Stopwatch.StartNew();
+            var res = Day9.Day9Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day9\\InputVictor.txt");
+            s.Stop();
+            File.WriteAllText("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\Speed.txt", s.Elapsed.TotalNanoseconds.ToString());
+
+            Assert.Equal(69192, res);
+        }
+        [Fact]
+        public void Puzzle2Run()
+        {
+            var s = Stopwatch.StartNew();
+            var res = Day9.Day9Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day9\\InputVictor.txt");
+            s.Stop();
+            File.WriteAllText("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\Speed.txt", s.Elapsed.TotalNanoseconds.ToString());
+
+            Assert.Equal(69192, res);
+        }
+        [Fact]
+        public void Puzzle2Test()
+        {
+            var s = Stopwatch.StartNew();
+            var res = Day9.Day9Puzzle1.Run("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day9\\InputVictor.txt");
+            s.Stop();
+            File.WriteAllText("C:\\Users\\vicsch\\source\\personal\\AdventOfCode2025\\Day5\\Speed.txt", s.Elapsed.TotalNanoseconds.ToString());
+
+            Assert.Equal(69192, res);
+        }
+    }
 }
